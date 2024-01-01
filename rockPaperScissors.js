@@ -22,13 +22,6 @@ function getComputerChoice() {
 }
 
 
-// get player selection
-const playerSelection = "Rock";
-
-// get computer selection
-let computerSelection = getComputerChoice();
-
-
 // play the game based on player and computer selection
 function playRound(playerSelection, computerSelection) {
 
@@ -77,9 +70,74 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-textResult = playRound(playerSelection, computerSelection);
-checkResult = textResult.includes('won');
-console.log(`Player select : ${playerSelection}`);
-console.log(`Computer select : ${computerSelection}`);
-console.log(`The result is : ${textResult}`);
-console.log(checkResult);
+// create a best-of-five game
+function game() {
+    // declare and initialized score variable
+    let score = 0;
+    let game = 1;
+
+    // play game times
+    playerSelection = prompt(`Please select rock, paper or scissors for game #${game}.`)
+    computerSelection = getComputerChoice();                    // update computer selection
+    textResult = playRound(playerSelection, computerSelection); // play the game
+    checkResult = textResult.includes('won');                   // check if player had won
+    
+    if (checkResult) {score = score + 1};                       // update score if won
+
+    console.log(`Game #${game}: Player select: ${playerSelection}; Computer select: ${computerSelection}. Score: ${score} out of 5.`);
+
+    game = game + 1;
+
+    // play game four more times (not using loop at this stage of lesson.)
+    // game #2 ------------------------------------------------------------------------------
+    playerSelection = prompt(`Please select rock, paper or scissors for game #${game}.`)
+    computerSelection = getComputerChoice();                    // update computer selection
+    textResult = playRound(playerSelection, computerSelection); // play the game
+    checkResult = textResult.includes('won');                   // check if player had won
+    
+    if (checkResult) {score = score + 1};                       // update score if won
+
+    console.log(`Game #${game}: Player select: ${playerSelection}; Computer select: ${computerSelection}. Score: ${score} out of 5.`);
+
+    game = game + 1;
+
+    // game #3 ------------------------------------------------------------------------------
+    playerSelection = prompt(`Please select rock, paper or scissors for game #${game}.`)
+    computerSelection = getComputerChoice();                    // update computer selection
+    textResult = playRound(playerSelection, computerSelection); // play the game
+    checkResult = textResult.includes('won');                   // check if player had won
+    
+    if (checkResult) {score = score + 1};                       // update score if won
+
+    console.log(`Game #${game}: Player select: ${playerSelection}; Computer select: ${computerSelection}. Score: ${score} out of 5.`);
+
+    game = game + 1;
+
+    // game #4 ------------------------------------------------------------------------------
+    playerSelection = prompt(`Please select rock, paper or scissors for game #${game}.`)
+    computerSelection = getComputerChoice();                    // update computer selection
+    textResult = playRound(playerSelection, computerSelection); // play the game
+    checkResult = textResult.includes('won');                   // check if player had won
+    
+    if (checkResult) {score = score + 1};                       // update score if won
+
+    console.log(`Game #${game}: Player select: ${playerSelection}; Computer select: ${computerSelection}. Score: ${score} out of 5.`);
+
+    game = game + 1;
+
+    // game #5 ------------------------------------------------------------------------------
+    playerSelection = prompt(`Please select rock, paper or scissors for game #${game}.`)
+    computerSelection = getComputerChoice();                    // update computer selection
+    textResult = playRound(playerSelection, computerSelection); // play the game
+    checkResult = textResult.includes('won');                   // check if player had won
+    
+    if (checkResult) {score = score + 1};                       // update score if won
+
+    console.log(`Game #${game}: Player select: ${playerSelection}; Computer select: ${computerSelection}. Score: ${score} out of 5.`);
+
+    game = game + 1;
+
+}
+
+// run the game function
+game();
